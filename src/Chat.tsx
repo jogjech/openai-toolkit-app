@@ -6,10 +6,10 @@ import { VscClearAll } from 'react-icons/vsc'
 
 function Chat() {
   let [apiKeyInput, setApiKeyInput] = React.useState<string>("");
-  let [apiKey, setApiKey] = React.useState<string>(() => {
+  let [apiKey, setApiKey] = React.useState<string|undefined>(() => {
     const localStorageApiKey = localStorage.getItem("apiKey");
     if (localStorageApiKey === null) {
-      return "";
+      return undefined;
     }
     return localStorageApiKey;
   });
